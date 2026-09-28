@@ -1,0 +1,45 @@
+{% extends 'base.html' %}{% load i18n %}{% block content %}
+
+<section class="shell py-12">
+  {% include 'vendor/_nav.html' %}
+  <h1 class="mb-8 text-3xl font-semibold">{% trans 'Menu management' %}</h1>
+  <div class="grid gap-4 md:grid-cols-2">
+    {% for item in products %}
+    <article
+      class="panel"
+      x-data="{ available:true, price:{{ item.price }}/100 }"
+    >
+      <h2 class="mb-5 text-xl">{{ item.name }}</h2>
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <label for="price-{{ item.id }}" class="mb-2 block text-xs text-muted"
+            >{% trans 'Price (USD)' %}</label
+          ><input
+            id="price-{{ item.id }}"
+            type="number"
+            min="0"
+            max="9999"
+            step="0.01"
+            x-model.number="price"
+            class="field w-32"
+          />
+        </div>
+        <button
+          role="switch"
+          :aria-checked="available"
+          @click="available=!available"
+          class="btn-secondary"
+        >
+          <span
+            class="h-2 w-2 rounded-full"
+            :class="available?'bg-aqua':'bg-muted'"
+          ></span
+          ><span x-show="available">{% trans 'Available' %}</span
+          ><span x-cloak x-show="!available">{% trans 'Sold out' %}</span>
+        </button>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% load i18n %}
+<div class="mb-8 rounded-xl border border-line p-4 text-sm text-muted">
+  {% trans 'Demo workspace — sample data only. Changes are not saved.' %}
+</div>
+<nav
+  class="mb-8 flex flex-wrap gap-3"
+  aria-label="{% trans 'Merchant navigation' %}"
+>
+  <a class="btn-secondary" href="{% url 'dashboard' %}"
+    >{% trans 'Overview' %}</a
+  ><a class="btn-secondary" href="{% url 'menu_manage' %}"
+    >{% trans 'Menu management' %}</a
+  ><a class="btn-secondary" href="{% url 'qr_codes' %}"
+    >{% trans 'Table QR codes' %}</a
+  >
+</nav>

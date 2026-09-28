@@ -1,0 +1,25 @@
+{% load i18n %}
+<div class="border-t border-line pt-5">
+  <div class="mb-3 flex justify-between">
+    <span>{% trans 'Subtotal' %}</span
+    ><strong class="tabular-nums">${{ subtotal|floatformat:2 }}</strong>
+  </div>
+  <p class="mb-4 text-xs text-muted">
+    {% trans 'Demo order. No payment will be collected.' %}
+  </p>
+  <form method="post" action="{% url 'checkout' %}">
+    {% csrf_token %}<button
+      id="checkout-button"
+      class="btn-primary w-full"
+      {%
+      if
+      not
+      lines
+      %}disabled{%
+      endif
+      %}
+    >
+      {% trans 'Proceed to Checkout' %} →
+    </button>
+  </form>
+</div>

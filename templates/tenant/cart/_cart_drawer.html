@@ -1,0 +1,99 @@
+{% load i18n %}
+<div
+  x-cloak
+  x-show="drawer"
+  x-transition.opacity
+  class="fixed inset-0 z-50 bg-black/65"
+  @click.self="drawer=false"
+>
+  <section
+    class="absolute inset-y-0 end-0 flex w-full max-w-md flex-col bg-canvas p-6 shadow-2xl"
+    x-trap.inert.noscroll="drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cart-title"
+  >
+    <div class="mb-6 flex items-center justify-between">
+      <h2 id="cart-title" class="text-2xl font-semibold">
+        {% trans 'Your order' %}
+      </h2>
+      <button
+        class="btn-secondary px-4"
+        @click="drawer=false"
+        aria-label="{% trans 'Close cart' %}"
+      >
+        ×
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto">
+      <p x-show="items.length===0" class="py-10 text-center text-muted">
+        {% trans 'Your next favorite is waiting. Add something delicious.' %}
+      </p>
+      <template x-for="row in items" :key="row.key">
+        <article class="mb-3 rounded-xl border border-line p-4">
+          <div class="flex justify-between gap-4">
+            <h3 x-text="name(row)"></h3>
+            <span class="tabular-nums" x-text="money(rowPrice(row))"></span>
+          </div>
+          <p class="mt-2 text-xs text-muted">
+            <span x-show="row.milk==='oat'">{% trans 'Oat milk' %}</span
+            ><span x-show="row.milk==='regular'">{% trans 'Whole milk' %}</span
+            ><span x-show="row.shot"> · {% trans 'Extra espresso shot' %}</span
+            ><span x-show="row.sweetness==='none'">
+              · {% trans 'Unsweetened' %}</span
+            ><span x-show="row.sweetness==='extra'">
+              · {% trans 'Extra sweet' %}</span
+            >
+          </p>
+          <div class="mt-3 flex items-center gap-4">
+            <button
+              class="btn-secondary px-4"
+              @click="change(row.key,-1)"
+              aria-label="{% trans 'Decrease quantity' %}"
+            >
+              −</button
+            ><span x-text="row.quantity"></span
+            ><button
+              class="btn-secondary px-4"
+              :disabled="row.quantity>=20"
+              @click="change(row.key,1)"
+              aria-label="{% trans 'Increase quantity' %}"
+            >
+              +
+            </button>
+          </div>
+        </article></template
+      >
+    </div>
+    <form
+      id="cart-sync"
+      hx-post="{% url 'cart' %}"
+      hx-trigger="cart-sync"
+      hx-target="#cart-summary"
+      hx-sync="this:replace"
+      @htmx:before-request="syncError=false;document.getElementById('checkout-button')?.setAttribute('disabled','')"
+      @htmx:response-error="syncError=true"
+      @htmx:send-error="syncError=true"
+    >
+      {% csrf_token %}<input
+        type="hidden"
+        name="cart"
+        :value="JSON.stringify(items)"
+      />
+    </form>
+    <p
+      x-cloak
+      x-show="syncError"
+      role="alert"
+      class="my-3 text-sm text-red-500"
+    >
+      {% trans 'Could not update your cart. Please try again.' %}<button
+        @click="sync()"
+        class="underline"
+      >
+        {% trans 'Retry' %}
+      </button>
+    </p>
+    <div id="cart-summary" aria-live="polite"></div>
+  </section>
+</div>

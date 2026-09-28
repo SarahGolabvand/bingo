@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django Template & Context Inspector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen p-6 font-sans">
+    <div class="max-w-6xl mx-auto space-y-6">
+      <!-- Header & Request Meta -->
+      <header
+        class="flex flex-wrap justify-between items-center bg-slate-900 border border-slate-800 p-4 rounded-xl shadow-lg gap-4"
+      >
+        <div>
+          <h1 class="text-xl font-bold tracking-tight text-indigo-400">
+            Django View Inspector
+          </h1>
+          <p class="text-xs text-slate-400 font-mono mt-0.5">
+            Path:
+            <span class="text-indigo-300 font-semibold"
+              >{{ request.path }}</span
+            >
+            | Method:
+            <span class="px-1.5 py-0.5 bg-slate-800 text-amber-400 rounded"
+              >{{ request.method }}</span
+            >
+          </p>
+        </div>
+        <div class="flex items-center gap-3 text-xs font-mono">
+          <span
+            class="bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-lg text-slate-300"
+          >
+            User:
+            <strong
+              class="{% if request.user.is_authenticated %}text-emerald-400{% else %}text-rose-400{% endif %}"
+              >{{ request.user }}</strong
+            >
+          </span>
+          <span
+            class="bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-lg text-slate-300"
+          >
+            Auth: {% if request.user.is_authenticated %}True{% else %}False{%
+            endif %}
+          </span>
+        </div>
+      </header>
+
+      <!-- Django Messages (Alerts) -->
+      {% if messages %}
+      <div class="space-y-2">
+        {% for message in messages %}
+        <div
+          class="p-3 text-xs rounded-lg border font-mono flex items-center justify-between {% if message.tags == 'error' %}bg-rose-950/60 border-rose-800 text-rose-300 {% elif message.tags == 'success' %}bg-emerald-950/60 border-emerald-800 text-emerald-300 {% else %}bg-sky-950/60 border-sky-800 text-sky-300{% endif %}"
+        >
+          <span><strong>[{{ message.tags|upper }}]</strong> {{ message }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left Column: Context Inspector -->
+        <section class="lg:col-span-6 space-y-6">
+          <!-- Context Variables Dump -->
+          <div
+            class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl space-y-4"
+          >
+            <div
+              class="flex justify-between items-center border-b border-slate-800 pb-3"
+            >
+              <h2
+                class="text-sm font-semibold uppercase tracking-wider text-slate-400"
+              >
+                Context Data
+              </h2>
+              <span class="text-[11px] font-mono text-slate-500"
+                >Rendered via view</span
+              >
+            </div>
+
+            <!-- Variable List / Loop Demo -->
+            <div class="space-y-3">
+              <div
+                class="bg-slate-950 border border-slate-800/80 rounded-lg p-3"
+              >
+                <span
+                  class="text-xs font-mono text-indigo-400 font-semibold block mb-1"
+                  >Custom Context Dump:</span
+                >
+                <div class="text-xs font-mono space-y-1 text-slate-300">
+                  {% for key, val in request.resolver_match.kwargs.items %}
+                  <div>
+                    <span class="text-amber-400">URL Kwarg [{{ key }}]:</span>
+                    {{ val }}
+                  </div>
+                  {% empty %}
+                  <div class="text-slate-500 italic">No URL kwargs passed.</div>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <!-- List or QuerySet inspection -->
+              <div
+                class="bg-slate-950 border border-slate-800/80 rounded-lg p-3"
+              >
+                <span
+                  class="text-xs font-mono text-indigo-400 font-semibold block mb-2"
+                  >Item Collection / QuerySet (if available):</span
+                >
+                {% if items %}
+                <ul class="text-xs font-mono divide-y divide-slate-800/80">
+                  {% for item in items %}
+                  <li class="py-1.5 flex justify-between">
+                    <span class="text-slate-200">{{ item }}</span>
+                    <span class="text-slate-500 text-[10px]"
+                      >#{{ forloop.counter }}</span
+                    >
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% else %}
+                <p class="text-xs text-slate-500 font-mono italic">
+                  No 'items' variable in context. Pass context={'items': [...]}
+                  in view.
+                </p>
+                {% endif %}
+              </div>
+
+              <!-- Generic object/variable display block -->
+              <div
+                class="bg-slate-950 border border-slate-800/80 rounded-lg p-3"
+              >
+                <span
+                  class="text-xs font-mono text-indigo-400 font-semibold block mb-1"
+                  >Raw Context Variable ('data'):</span
+                >
+                <pre
+                  class="text-xs font-mono text-emerald-400 overflow-x-auto whitespace-pre-wrap"
+                >{% if data %}{{ data }}{% else %}<span class="text-slate-500">None</span>{% endif %}</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Session & Cookies Inspector -->
+          <div
+            class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl space-y-3"
+          >
+            <h2
+              class="text-sm font-semibold uppercase tracking-wider text-slate-400"
+            >
+              Request Data Dump
+            </h2>
+            <div class="text-xs font-mono space-y-2">
+              <div>
+                <span class="text-amber-400">GET Query Params:</span>
+                <pre
+                  class="bg-slate-950 p-2 rounded border border-slate-800 text-slate-300 mt-1 overflow-x-auto"
+                >
+{{ request.GET.dict }}</pre
+                >
+              </div>
+              <div>
+                <span class="text-amber-400">POST Payload:</span>
+                <pre
+                  class="bg-slate-950 p-2 rounded border border-slate-800 text-slate-300 mt-1 overflow-x-auto"
+                >
+{{ request.POST.dict }}</pre
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Column: Interactive Form & View Actions -->
+        <section class="lg:col-span-6 space-y-6">
+          <!-- Form Tester (Supports CSRF) -->
+          <div
+            class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl space-y-4"
+          >
+            <h2
+              class="text-sm font-semibold uppercase tracking-wider text-slate-400"
+            >
+              Interactive Form Dispatcher
+            </h2>
+
+            <form method="POST" action="" class="space-y-3">
+              {% csrf_token %} {% if form %}
+              <!-- If a Django Form instance is passed -->
+              <div class="space-y-3 text-xs">{{ form.as_p }}</div>
+              {% else %}
+              <!-- Fallback generic inputs for testing POST views -->
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1"
+                  >Action Name</label
+                >
+                <input
+                  type="text"
+                  name="action"
+                  value="test_action"
+                  class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs font-mono text-slate-200 focus:outline-none focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1"
+                  >Payload / Text</label
+                >
+                <textarea
+                  name="payload"
+                  rows="3"
+                  class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-xs font-mono text-slate-300 focus:outline-none focus:border-indigo-500"
+                  placeholder="Type data to post to your view..."
+                ></textarea>
+              </div>
+              {% endif %}
+
+              <div class="flex gap-2 pt-2">
+                <button
+                  type="submit"
+                  class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg text-xs tracking-wide transition shadow-lg shadow-indigo-600/20"
+                >
+                  Submit POST (with CSRF)
+                </button>
+                <button
+                  type="submit"
+                  formmethod="GET"
+                  class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 px-4 py-2 rounded-lg text-xs transition"
+                >
+                  Submit GET
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Quick Navigation Bar -->
+          <div
+            class="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-xl"
+          >
+            <span
+              class="text-xs text-slate-400 block mb-2 font-semibold uppercase tracking-wider"
+              >Quick Query Helper:</span
+            >
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+              <a
+                href="?test=1&debug=true"
+                class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-2.5 py-1 rounded border border-slate-700 transition"
+                >?test=1&debug=true</a
+              >
+              <a
+                href="?page=2"
+                class="bg-slate-800 hover:bg-slate-700 text-indigo-300 px-2.5 py-1 rounded border border-slate-700 transition"
+                >?page=2</a
+              >
+              <a
+                href="{{ request.path }}"
+                class="bg-slate-800 hover:bg-slate-700 text-slate-400 px-2.5 py-1 rounded border border-slate-700 transition"
+                >Clear Query Params</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

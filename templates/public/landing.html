@@ -1,0 +1,125 @@
+{% extends 'base.html' %}{% load i18n %}{% block content %}
+
+<section class="hero-glow overflow-hidden">
+  <div class="shell grid items-center gap-8 py-16 lg:grid-cols-2 lg:py-24">
+    <div>
+      <p
+        class="eyebrow mb-7 inline-flex items-center gap-2 rounded-full border border-line px-4 py-2"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-aqua"></span>{% trans 'Built
+        for specialty. Designed for you.' %}
+      </p>
+      <h1
+        class="max-w-2xl text-5xl font-semibold leading-[1.12] tracking-tight sm:text-6xl lg:text-7xl"
+      >
+        {% trans 'Great coffee.' %}<br />{% trans 'Better moments.' %}<br /><span
+          class="text-teal-700 dark:text-aqua"
+          >{% trans 'Zero friction.' %}</span
+        >
+      </h1>
+      <p class="mt-6 max-w-lg text-lg leading-relaxed text-muted">
+        {% trans 'Your menu, beautifully digital. Give guests a seamless way to
+        explore, order, and fall in love with your café.' %}
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="{% url 'login' %}" class="btn-primary"
+          >{% trans 'Start your story' %}<span aria-hidden="true">↗</span></a
+        ><a href="{% url 'menu' %}" class="btn-secondary"
+          ><span aria-hidden="true">▷</span>{% trans 'Explore live demo' %}</a
+        >
+      </div>
+      <p class="mt-5 text-xs text-muted">
+        {% trans 'Thoughtful details. Effortless service.' %}
+      </p>
+    </div>
+    <div
+      class="coffee-scene"
+      role="img"
+      aria-label="{% trans 'A sculptural Dingo coffee cup surrounded by an aqua glow' %}"
+    >
+      <div class="orbit"></div>
+      <div class="orbit" style="transform: rotate(25deg) scale(0.85)"></div>
+      <div class="coffee-cup">
+        <div class="cup-label">
+          dingo<span class="text-aqua">.</span>
+          <p class="mt-2 text-[9px] uppercase tracking-[.3em]">
+            BREW SOMETHING GOOD
+          </p>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-7 start-0 rounded-2xl border border-line bg-surface/90 px-5 py-4 shadow-xl backdrop-blur"
+      >
+        <span class="text-aqua">✓</span>
+        <span class="text-sm">{% trans 'Good taste. Great experience.' %}</span>
+        <p class="mt-1 ps-5 text-xs text-muted">
+          {% trans 'From the first scan to the last sip.' %}
+        </p>
+      </div>
+      <div
+        class="absolute end-0 top-12 rounded-xl border border-line bg-surface px-4 py-3 text-xs"
+      >
+        <span class="text-aqua">✦</span> {% trans 'Your café, connected' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="border-y border-line">
+  <div
+    class="shell flex flex-wrap justify-between gap-6 py-6 text-xs uppercase tracking-widest text-muted"
+  >
+    <span>{% trans 'Made for independent coffee culture' %}</span
+    ><span>◈ {% trans 'Specialty cafés' %}</span
+    ><span>◌ {% trans 'Coffee roasters' %}</span
+    ><span>✳ {% trans 'Neighborhood favorites' %}</span>
+  </div>
+</div>
+
+<section id="features" class="shell py-20">
+  <div class="mb-10 flex flex-wrap items-end justify-between gap-5">
+    <div>
+      <p class="eyebrow mb-3">{% trans 'Less busywork. More brewing.' %}</p>
+      <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+        {% trans 'Everything your café needs.' %}
+      </h2>
+    </div>
+    <p class="max-w-sm text-muted">
+      {% trans 'Simple tools that work quietly, so your hospitality can shine.'
+      %}
+    </p>
+  </div>
+  <div class="grid gap-5 md:grid-cols-3">
+    <article class="panel">
+      <span class="text-3xl text-aqua">▦</span>
+      <h3 class="mb-3 mt-6 text-lg font-semibold">
+        {% trans 'A menu with personality' %}
+      </h3>
+      <p class="text-sm leading-7 text-muted">
+        {% trans 'Beautiful photos, thoughtful modifiers, and a menu that feels
+        like your brand.' %}
+      </p>
+    </article>
+    <article class="panel">
+      <span class="text-3xl text-aqua">⌁</span>
+      <h3 class="mb-3 mt-6 text-lg font-semibold">
+        {% trans 'Scan. Sip. Stay a while.' %}
+      </h3>
+      <p class="text-sm leading-7 text-muted">
+        {% trans 'No downloads. No waiting. Just a quick scan and their next
+        favorite order.' %}
+      </p>
+    </article>
+    <article class="panel">
+      <span class="text-3xl text-aqua">◎</span>
+      <h3 class="mb-3 mt-6 text-lg font-semibold">
+        {% trans 'Your floor, in focus' %}
+      </h3>
+      <p class="text-sm leading-7 text-muted">
+        {% trans 'Keep your menu and daily service organized in one calm
+        workspace.' %}
+      </p>
+    </article>
+  </div>
+</section>
+{% endblock %}

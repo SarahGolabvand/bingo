@@ -1,0 +1,65 @@
+{% extends 'base.html' %}{% load i18n %}{% block content %}
+
+<section class="shell py-16">
+  <div class="panel mx-auto max-w-md" x-data="otpTimer">
+    <p class="eyebrow">{% trans 'Welcome back' %}</p>
+    <h1 class="my-4 text-3xl font-semibold">
+      {% trans 'Your café starts here.' %}
+    </h1>
+    <p class="mb-6 text-sm leading-6 text-muted">
+      {% trans 'Authentication preview. Connect your SMS provider to enable
+      sign-in.' %}
+    </p>
+    <label for="phone" class="mb-2 block text-sm"
+      >{% trans 'Phone number' %}</label
+    ><input
+      id="phone"
+      type="tel"
+      autocomplete="tel"
+      dir="ltr"
+      placeholder="+98 912 000 0000"
+      class="field"
+    /><button
+      class="btn-secondary my-4 w-full"
+      @click="start()"
+      :disabled="remaining>0"
+    >
+      {% trans 'Preview 60-second cooldown' %}
+      <span x-show="remaining>0" x-text="remaining" class="tabular-nums"></span>
+    </button>
+    <fieldset>
+      <legend class="mb-3 text-sm">{% trans 'Enter the 4-digit code' %}</legend>
+      <div class="flex justify-between gap-3" dir="ltr">
+        {% for n in '0123' %}<input
+          x-ref="digit{{ n }}"
+          :value="digits[{{ n }}]"
+          @input="input($event,{{ n }})"
+          @paste.prevent="fill($event.clipboardData.getData('text'),{{ n }})"
+          @keydown.backspace="back({{ n }})"
+          type="text"
+          inputmode="numeric"
+          {%
+          if
+          forloop.first
+          %}autocomplete="one-time-code"
+          {%
+          else
+          %}autocomplete="off"
+          {%
+          endif
+          %}
+          class="field w-16 text-center text-xl"
+          aria-label="{% blocktrans with number=forloop.counter %}Code digit {{ number }}{% endblocktrans %}"
+        />{% endfor %}
+      </div>
+    </fieldset>
+    <button disabled class="btn-primary mt-6 w-full">
+      {% trans 'Sign In' %}</button
+    ><a
+      href="{% url 'dashboard' %}"
+      class="mt-6 block text-center text-sm text-teal-700 dark:text-aqua"
+      >{% trans 'Explore the dashboard preview' %} →</a
+    >
+  </div>
+</section>
+{% endblock %}

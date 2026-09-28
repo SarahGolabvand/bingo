@@ -1,0 +1,602 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Dingo 1.0\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/public/pricing.html
+msgid "A beautiful beginning for your neighborhood café."
+msgstr "A beautiful beginning for your neighborhood café."
+
+#: templates/public/pricing.html
+msgid "A connected experience for your growing coffee business."
+msgstr "A connected experience for your growing coffee business."
+
+#: templates/vendor/dashboard.html
+msgid "A good day starts here."
+msgstr "A good day starts here."
+
+#: templates/includes/_footer.html
+msgid "A little more coffee. A lot less friction."
+msgstr "A little more coffee. A lot less friction."
+
+#: templates/public/landing.html
+msgid "A menu with personality"
+msgstr "A menu with personality"
+
+#: templates/public/landing.html
+msgid "A sculptural Dingo coffee cup surrounded by an aqua glow"
+msgstr "A sculptural Dingo coffee cup surrounded by an aqua glow"
+
+#: templates/vendor/qr_codes.html
+msgid "A seat at your table."
+msgstr "A seat at your table."
+
+#: templates/vendor/dashboard.html
+msgid "Active orders"
+msgstr "Active orders"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Add to Cart"
+msgstr "Add to Cart"
+
+#: templates/tenant/menu.html
+msgid "All items"
+msgstr "All items"
+
+#: templates/tenant/orders/invoice.html
+msgid "Amount"
+msgstr "Amount"
+
+#: templates/public/pricing.html
+msgid "Annual plans are billed yearly. Prices shown per month in USD."
+msgstr "Annual plans are billed yearly. Prices shown per month in USD."
+
+#: templates/public/pricing.html
+msgid "Annually"
+msgstr "Annually"
+
+#: templates/public/auth/login_otp.html
+msgid "Authentication preview. Connect your SMS provider to enable sign-in."
+msgstr "Authentication preview. Connect your SMS provider to enable sign-in."
+
+#: templates/vendor/menu_manage.html
+msgid "Available"
+msgstr "Available"
+
+#: templates/tenant/menu.html
+msgid "Bakery"
+msgstr "Bakery"
+
+#: templates/public/landing.html
+msgid "Beautiful photos, thoughtful modifiers, and a menu that feels like your brand."
+msgstr "Beautiful photos, thoughtful modifiers, and a menu that feels like your brand."
+
+#: templates/public/landing.html
+msgid "Better moments."
+msgstr "Better moments."
+
+#: templates/public/landing.html
+msgid "Built for specialty. Designed for you."
+msgstr "Built for specialty. Designed for you."
+
+#: apps/frontend/views.py
+msgid "Butter croissant"
+msgstr "Butter croissant"
+
+#: apps/frontend/views.py
+msgid "Ceremonial matcha, a softer kind of energy."
+msgstr "Ceremonial matcha, a softer kind of energy."
+
+#: templates/includes/_language_switcher.html
+msgid "Change language"
+msgstr "Change language"
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Close cart"
+msgstr "Close cart"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Close dialog"
+msgstr "Close dialog"
+
+#: apps/frontend/views.py
+msgid "Cloud matcha"
+msgstr "Cloud matcha"
+
+#: templates/public/auth/login_otp.html
+#, python-format
+msgid "Code digit %(number)s"
+msgstr "Code digit %(number)s"
+
+#: templates/tenant/menu.html
+msgid "Coffee"
+msgstr "Coffee"
+
+#: templates/public/landing.html
+msgid "Coffee roasters"
+msgstr "Coffee roasters"
+
+#: templates/includes/_header.html templates/includes/_header.html templates/includes/_footer.html
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/vendor/qr_codes.html
+msgid "Could not generate codes. Please try again."
+msgstr "Could not generate codes. Please try again."
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Could not update your cart. Please try again."
+msgstr "Could not update your cart. Please try again."
+
+#: templates/tenant/components/_item_card.html
+#, python-format
+msgid "Customize %(name)s"
+msgstr "Customize %(name)s"
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Decrease quantity"
+msgstr "Decrease quantity"
+
+#: templates/tenant/orders/invoice.html
+msgid "Demo invoice"
+msgstr "Demo invoice"
+
+#: templates/tenant/menu.html
+msgid "Demo menu"
+msgstr "Demo menu"
+
+#: templates/tenant/cart/_cart_summary.html
+msgid "Demo order. No payment will be collected."
+msgstr "Demo order. No payment will be collected."
+
+#: templates/vendor/_nav.html
+msgid "Demo workspace — sample data only. Changes are not saved."
+msgstr "Demo workspace — sample data only. Changes are not saved."
+
+#: templates/public/pricing.html
+msgid "Digital menu and unlimited items"
+msgstr "Digital menu and unlimited items"
+
+#: templates/base.html
+msgid "Dingo — thoughtful digital menus for specialty coffee."
+msgstr "Dingo — thoughtful digital menus for specialty coffee."
+
+#: templates/includes/_messages.html
+msgid "Dismiss notification"
+msgstr "Dismiss notification"
+
+#: apps/frontend/views.py
+msgid "Double espresso, silky steamed milk."
+msgstr "Double espresso, silky steamed milk."
+
+#: templates/vendor/qr_codes.html
+msgid "Download QR code"
+msgstr "Download QR code"
+
+#: templates/public/pricing.html
+msgid "English and Persian menus"
+msgstr "English and Persian menus"
+
+#: templates/public/auth/login_otp.html
+msgid "Enter the 4-digit code"
+msgstr "Enter the 4-digit code"
+
+#: templates/public/pricing.html
+msgid "Essentials"
+msgstr "Essentials"
+
+#: templates/public/pricing.html
+msgid "Everything in Essentials"
+msgstr "Everything in Essentials"
+
+#: templates/public/landing.html
+msgid "Everything your café needs."
+msgstr "Everything your café needs."
+
+#: templates/public/landing.html
+msgid "Explore live demo"
+msgstr "Explore live demo"
+
+#: templates/public/auth/login_otp.html
+msgid "Explore the dashboard preview"
+msgstr "Explore the dashboard preview"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/cart/_cart_drawer.html templates/tenant/orders/invoice.html
+msgid "Extra espresso shot"
+msgstr "Extra espresso shot"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/cart/_cart_drawer.html
+msgid "Extra sweet"
+msgstr "Extra sweet"
+
+#: templates/includes/_header.html templates/includes/_header.html
+msgid "Features"
+msgstr "Features"
+
+#: templates/tenant/menu.html
+msgid "Find your next favorite."
+msgstr "Find your next favorite."
+
+#: templates/tenant/menu.html
+msgid "Freshly brewed. Thoughtfully made."
+msgstr "Freshly brewed. Thoughtfully made."
+
+#: templates/public/landing.html
+msgid "From the first scan to the last sip."
+msgstr "From the first scan to the last sip."
+
+#: templates/vendor/qr_codes.html
+msgid "Generate QR package"
+msgstr "Generate QR package"
+
+#: templates/vendor/qr_codes.html
+msgid "Generate printable table codes for the demo menu on this host."
+msgstr "Generate printable table codes for the demo menu on this host."
+
+#: templates/includes/_header.html templates/public/pricing.html templates/public/pricing.html
+msgid "Get Started"
+msgstr "Get Started"
+
+#: apps/frontend/views.py
+msgid "Golden layers, baked fresh every morning."
+msgstr "Golden layers, baked fresh every morning."
+
+#: templates/public/landing.html
+msgid "Good taste. Great experience."
+msgstr "Good taste. Great experience."
+
+#: templates/vendor/qr_codes.html
+msgid "Good things are brewing."
+msgstr "Good things are brewing."
+
+#: templates/public/landing.html
+msgid "Great coffee."
+msgstr "Great coffee."
+
+#: templates/public/pricing.html
+msgid "Illustrative plans — billing is not enabled in this preview."
+msgstr "Illustrative plans — billing is not enabled in this preview."
+
+#: templates/tenant/components/_item_modal.html
+msgid "Included"
+msgstr "Included"
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Increase quantity"
+msgstr "Increase quantity"
+
+#: apps/frontend/views.py
+msgid "Invalid cart."
+msgstr "Invalid cart."
+
+#: templates/tenant/orders/invoice.html
+msgid "Item"
+msgstr "Item"
+
+#: templates/public/landing.html
+msgid "Keep your menu and daily service organized in one calm workspace."
+msgstr "Keep your menu and daily service organized in one calm workspace."
+
+#: templates/public/landing.html
+msgid "Less busywork. More brewing."
+msgstr "Less busywork. More brewing."
+
+#: templates/includes/_header.html templates/includes/_header.html
+msgid "Live Demo"
+msgstr "Live Demo"
+
+#: templates/public/pricing.html
+msgid "Live operations dashboard"
+msgstr "Live operations dashboard"
+
+#: templates/public/landing.html
+msgid "Made for independent coffee culture"
+msgstr "Made for independent coffee culture"
+
+#: templates/base.html
+msgid "Made for your kind of coffee."
+msgstr "Made for your kind of coffee."
+
+#: templates/includes/_header.html
+msgid "Main navigation"
+msgstr "Main navigation"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Make it yours"
+msgstr "Make it yours"
+
+#: templates/tenant/menu.html
+msgid "Matcha"
+msgstr "Matcha"
+
+#: templates/tenant/menu.html
+msgid "Menu categories"
+msgstr "Menu categories"
+
+#: templates/vendor/_nav.html templates/vendor/menu_manage.html
+msgid "Menu management"
+msgstr "Menu management"
+
+#: templates/vendor/_nav.html
+msgid "Merchant navigation"
+msgstr "Merchant navigation"
+
+#: apps/frontend/views.py
+msgid "Midnight cold brew"
+msgstr "Midnight cold brew"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Milk selection"
+msgstr "Milk selection"
+
+#: templates/includes/_header.html
+msgid "Mobile navigation"
+msgstr "Mobile navigation"
+
+#: templates/public/pricing.html
+msgid "Monthly"
+msgstr "Monthly"
+
+#: templates/public/landing.html
+msgid "Neighborhood favorites"
+msgstr "Neighborhood favorites"
+
+#: templates/public/landing.html
+msgid "No downloads. No waiting. Just a quick scan and their next favorite order."
+msgstr "No downloads. No waiting. Just a quick scan and their next favorite order."
+
+#: templates/tenant/orders/invoice.html
+msgid "No items yet."
+msgstr "No items yet."
+
+#: templates/tenant/orders/invoice.html
+msgid "Not applied in demo"
+msgstr "Not applied in demo"
+
+#: templates/vendor/qr_codes.html
+msgid "Number of tables"
+msgstr "Number of tables"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/cart/_cart_drawer.html templates/tenant/orders/invoice.html
+msgid "Oat milk"
+msgstr "Oat milk"
+
+#: templates/includes/_header.html
+msgid "Open navigation"
+msgstr "Open navigation"
+
+#: templates/tenant/orders/invoice.html
+msgid "Order details"
+msgstr "Order details"
+
+#: templates/public/pricing.html
+msgid "Ordering and custom modifiers"
+msgstr "Ordering and custom modifiers"
+
+#: templates/vendor/dashboard.html
+msgid "Orders today"
+msgstr "Orders today"
+
+#: templates/vendor/_nav.html
+msgid "Overview"
+msgstr "Overview"
+
+#: templates/public/auth/login_otp.html
+msgid "Phone number"
+msgstr "Phone number"
+
+#: templates/vendor/dashboard.html
+msgid "Preparing"
+msgstr "Preparing"
+
+#: templates/vendor/dashboard.html
+msgid "Preview"
+msgstr "Preview"
+
+#: templates/public/auth/login_otp.html
+msgid "Preview 60-second cooldown"
+msgstr "Preview 60-second cooldown"
+
+#: templates/tenant/orders/invoice.html
+msgid "Preview only — not a payment receipt."
+msgstr "Preview only — not a payment receipt."
+
+#: templates/vendor/menu_manage.html
+msgid "Price (USD)"
+msgstr "Price (USD)"
+
+#: templates/includes/_header.html templates/includes/_header.html templates/includes/_footer.html
+msgid "Pricing"
+msgstr "Pricing"
+
+#: templates/vendor/qr_codes.html
+msgid "Print QR package"
+msgstr "Print QR package"
+
+#: templates/tenant/orders/invoice.html
+msgid "Print invoice"
+msgstr "Print invoice"
+
+#: templates/tenant/cart/_cart_summary.html
+msgid "Proceed to Checkout"
+msgstr "Proceed to Checkout"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/orders/invoice.html
+msgid "Quantity"
+msgstr "Quantity"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Regular"
+msgstr "Regular"
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Retry"
+msgstr "Retry"
+
+#: templates/vendor/dashboard.html
+msgid "Revenue today"
+msgstr "Revenue today"
+
+#: templates/public/pricing.html
+msgid "Room to grow"
+msgstr "Room to grow"
+
+#: templates/vendor/qr_codes.html
+msgid "Scan to explore our menu"
+msgstr "Scan to explore our menu"
+
+#: templates/public/landing.html
+msgid "Scan. Sip. Stay a while."
+msgstr "Scan. Sip. Stay a while."
+
+#: templates/includes/_header.html templates/includes/_header.html templates/public/auth/login_otp.html
+msgid "Sign In"
+msgstr "Sign In"
+
+#: templates/public/pricing.html templates/vendor/dashboard.html
+msgid "Signature"
+msgstr "Signature"
+
+#: templates/public/pricing.html
+msgid "Simple plans. Beautiful possibilities."
+msgstr "Simple plans. Beautiful possibilities."
+
+#: templates/public/landing.html
+msgid "Simple tools that work quietly, so your hospitality can shine."
+msgstr "Simple tools that work quietly, so your hospitality can shine."
+
+#: templates/base.html
+msgid "Skip to content"
+msgstr "Skip to content"
+
+#: apps/frontend/views.py
+msgid "Slow-steeped for a smooth chocolate finish."
+msgstr "Slow-steeped for a smooth chocolate finish."
+
+#: templates/vendor/menu_manage.html
+msgid "Sold out"
+msgstr "Sold out"
+
+#: templates/public/landing.html
+msgid "Specialty cafés"
+msgstr "Specialty cafés"
+
+#: templates/public/landing.html
+msgid "Start your story"
+msgstr "Start your story"
+
+#: templates/vendor/dashboard.html
+msgid "Subscription"
+msgstr "Subscription"
+
+#: templates/tenant/cart/_cart_summary.html templates/tenant/orders/invoice.html
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Sweetness"
+msgstr "Sweetness"
+
+#: templates/tenant/menu.html templates/vendor/qr_codes.html templates/vendor/dashboard.html templates/tenant/orders/invoice.html
+msgid "Table"
+msgstr "Table"
+
+#: templates/public/pricing.html templates/vendor/_nav.html
+msgid "Table QR codes"
+msgstr "Table QR codes"
+
+#: templates/vendor/qr_codes.html
+msgid "Table menu QR code"
+msgstr "Table menu QR code"
+
+#: templates/tenant/orders/invoice.html
+msgid "Tax"
+msgstr "Tax"
+
+#: templates/tenant/orders/invoice.html
+msgid "Thanks for stopping by."
+msgstr "Thanks for stopping by."
+
+#: templates/tenant/menu.html templates/tenant/orders/invoice.html
+msgid "The Dingo coffee house"
+msgstr "The Dingo coffee house"
+
+#: templates/public/landing.html
+msgid "Thoughtful details. Effortless service."
+msgstr "Thoughtful details. Effortless service."
+
+#: templates/includes/_header.html
+msgid "Toggle dark mode"
+msgstr "Toggle dark mode"
+
+#: templates/tenant/orders/invoice.html
+msgid "Total"
+msgstr "Total"
+
+#: templates/tenant/orders/invoice.html
+msgid "Unit price"
+msgstr "Unit price"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/cart/_cart_drawer.html
+msgid "Unsweetened"
+msgstr "Unsweetened"
+
+#: templates/vendor/qr_codes.html
+msgid "Use a publicly reachable host before printing for guests. Localhost codes only work on this device."
+msgstr "Use a publicly reachable host before printing for guests. Localhost codes only work on this device."
+
+#: templates/vendor/dashboard.html apps/frontend/views.py
+msgid "Velvet latte"
+msgstr "Velvet latte"
+
+#: templates/tenant/menu.html
+msgid "View cart"
+msgstr "View cart"
+
+#: templates/public/auth/login_otp.html
+msgid "Welcome back"
+msgstr "Welcome back"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/cart/_cart_drawer.html templates/tenant/orders/invoice.html
+msgid "Whole milk"
+msgstr "Whole milk"
+
+#: templates/public/auth/login_otp.html
+msgid "Your café starts here."
+msgstr "Your café starts here."
+
+#: templates/public/landing.html
+msgid "Your café, connected"
+msgstr "Your café, connected"
+
+#: templates/vendor/dashboard.html
+msgid "Your daily brew"
+msgstr "Your daily brew"
+
+#: templates/public/landing.html
+msgid "Your floor, in focus"
+msgstr "Your floor, in focus"
+
+#: templates/public/landing.html
+msgid "Your menu, beautifully digital. Give guests a seamless way to explore, order, and fall in love with your café."
+msgstr "Your menu, beautifully digital. Give guests a seamless way to explore, order, and fall in love with your café."
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Your next favorite is waiting. Add something delicious."
+msgstr "Your next favorite is waiting. Add something delicious."
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Your order"
+msgstr "Your order"
+
+#: templates/public/landing.html
+msgid "Zero friction."
+msgstr "Zero friction."
+
+#: templates/public/pricing.html templates/public/pricing.html
+msgid "month"
+msgstr "month"

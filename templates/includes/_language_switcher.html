@@ -1,0 +1,3 @@
+{% load i18n %}
+<form action="{% url 'set_language' %}" method="post" class="inline-flex" hx-boost="false">{% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}"><input type="hidden" name="language" value="{% if LANGUAGE_CODE == 'fa' %}en{% else %}fa{% endif %}"><button class="rounded-full border border-line px-3 py-2 text-xs transition hover:border-aqua" aria-label="{% trans 'Change language' %}">{% if LANGUAGE_CODE == 'fa' %}EN{% else %}<span lang="fa">فارسی</span>{% endif %}</button>
+</form>

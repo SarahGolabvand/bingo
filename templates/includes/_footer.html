@@ -1,0 +1,7 @@
+{% load i18n %}
+<footer id="contact" class="mt-20 border-t border-line py-8">
+<div class="shell flex flex-wrap items-center justify-between gap-5 text-sm text-muted"><a href="{% url 'landing' %}" class="text-xl font-bold text-ink">dingo<span class="text-aqua">.</span></a><p>© {% now 'Y' %} Dingo. {% trans 'A little more coffee. A lot less friction.' %}</p>
+<div class="flex gap-5"><a href="{% url 'pricing' %}">{% trans 'Pricing' %}</a><a href="mailto:hello@example.com">{% trans 'Contact' %}</a>
+</div>
+</div>
+</footer>

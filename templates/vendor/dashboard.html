@@ -1,0 +1,42 @@
+{% extends 'base.html' %}{% load i18n %}{% block content %}
+
+<section class="shell py-12">
+  {% include 'vendor/_nav.html' %}
+  <p class="eyebrow">{% trans 'Your daily brew' %}</p>
+  <h1 class="mb-8 mt-3 text-3xl font-semibold">
+    {% trans 'A good day starts here.' %}
+  </h1>
+  <div class="grid gap-5 md:grid-cols-3">
+    <article class="panel">
+      <h2 class="text-sm text-muted">{% trans 'Orders today' %}</h2>
+      <p class="mt-4 text-4xl">24</p>
+    </article>
+    <article class="panel">
+      <h2 class="text-sm text-muted">{% trans 'Revenue today' %}</h2>
+      <p class="mt-4 text-4xl">$186.40</p>
+    </article>
+    <article class="panel">
+      <h2 class="text-sm text-muted">{% trans 'Subscription' %}</h2>
+      <p class="mt-4 text-2xl">
+        {% trans 'Signature' %}
+        <span class="text-sm text-teal-700 dark:text-aqua"
+          >· {% trans 'Preview' %}</span
+        >
+      </p>
+    </article>
+  </div>
+  <div class="panel mt-6">
+    <h2 class="mb-6 text-xl font-semibold">{% trans 'Active orders' %}</h2>
+    <div class="flex flex-wrap justify-between gap-4 border-t border-line pt-5">
+      <div>
+        #1042 · {% trans 'Table' %} 04
+        <p class="mt-2 text-sm text-muted">2 × {% trans 'Velvet latte' %}</p>
+      </div>
+      <span
+        class="h-fit rounded-full bg-aqua/10 px-3 py-2 text-sm text-teal-700 dark:text-aqua"
+        >{% trans 'Preparing' %}</span
+      ><span>$9.00</span>
+    </div>
+  </div>
+</section>
+{% endblock %}

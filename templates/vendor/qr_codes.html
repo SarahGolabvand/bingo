@@ -1,0 +1,83 @@
+{% extends 'base.html' %}{% load i18n static %}{% block scripts %}
+<script defer src="{% static 'js/qr.bundle.js' %}"></script>
+{% endblock %}{% block content %}
+
+<section
+  class="shell py-12"
+  x-data="qrPackage"
+  data-menu-url="{% url 'menu' %}"
+>
+  <div class="no-print">
+    {% include 'vendor/_nav.html' %}
+    <h1 class="mb-4 text-3xl font-semibold">
+      {% trans 'A seat at your table.' %}
+    </h1>
+    <p class="mb-6 text-muted">
+      {% trans 'Generate printable table codes for the demo menu on this host.'
+      %}
+    </p>
+    <form
+      @submit.prevent="generate()"
+      class="mb-8 flex flex-wrap items-end gap-4"
+    >
+      <div>
+        <label for="table-count" class="mb-2 block text-sm"
+          >{% trans 'Number of tables' %}</label
+        ><input
+          id="table-count"
+          class="field w-28"
+          type="number"
+          min="1"
+          max="50"
+          required
+          x-model.number="count"
+        />
+      </div>
+      <button class="btn-primary" :disabled="busy">
+        {% trans 'Generate QR package' %}</button
+      ><button
+        type="button"
+        @click="window.print()"
+        class="btn-secondary"
+        :disabled="!codes.length"
+      >
+        {% trans 'Print QR package' %}
+      </button>
+    </form>
+    <p x-cloak x-show="error" role="alert">
+      {% trans 'Could not generate codes. Please try again.' %}
+    </p>
+    <p class="mb-8 text-xs text-muted">
+      {% trans 'Use a publicly reachable host before printing for guests.
+      Localhost codes only work on this device.' %}
+    </p>
+  </div>
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 print:grid-cols-2">
+    <template x-for="code in codes" :key="code.table">
+      <article class="panel break-inside-avoid text-center">
+        <p class="text-3xl font-bold">dingo.</p>
+        <img
+          class="mx-auto my-5 h-44 w-44"
+          :src="code.image"
+          alt="{% trans 'Table menu QR code' %}"
+          width="176"
+          height="176"
+        />
+        <h2 class="text-lg">{% trans 'Good things are brewing.' %}</h2>
+        <p class="my-3 text-sm text-muted">
+          {% trans 'Scan to explore our menu' %}
+        </p>
+        <p class="eyebrow">
+          {% trans 'Table' %} <span x-text="code.table"></span>
+        </p>
+        <a
+          class="btn-secondary no-print mt-5"
+          :href="code.image"
+          :download="'dingo-table-'+code.table+'.png'"
+          >{% trans 'Download QR code' %}</a
+        >
+      </article></template
+    >
+  </div>
+</section>
+{% endblock %}

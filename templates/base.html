@@ -1,0 +1,45 @@
+{% load static i18n %}{% get_current_language as LANGUAGE_CODE %}{%
+get_current_language_bidi as LANGUAGE_BIDI %}
+<!doctype html>
+
+<html
+  lang="{{ LANGUAGE_CODE }}"
+  dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}"
+  class="dark"
+  x-data="{ darkMode: $persist(true) }"
+  :class="{ 'dark': darkMode }"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0D191D" />
+    <meta
+      name="description"
+      content="{% trans 'Dingo — thoughtful digital menus for specialty coffee.' %}"
+    />
+    <title>
+      {% block title %}Dingo — {% trans 'Made for your kind of coffee.' %} {%
+      endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    <script src="{% static 'js/theme.js' %}"></script>
+
+    <script defer src="{% static 'vendor/htmx.js' %}"></script>
+    <script defer src="{% static 'vendor/persist.js' %}"></script>
+    <script defer src="{% static 'vendor/focus.js' %}"></script>
+    <script defer src="{% static 'js/cart.js' %}"></script>
+    <script defer src="{% static 'js/otp-timer.js' %}"></script>
+    {% block scripts %} {% endblock %}
+    <script defer src="{% static 'vendor/alpine.js' %}"></script>
+  </head>
+  <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    <a href="#main" class="sr-only focus:not-sr-only"
+      >{% trans 'Skip to content' %}</a
+    >
+    {% include 'includes/_header.html' %}{% include 'includes/_messages.html' %}
+
+    <main id="main">{% block content %} {% endblock %}</main>
+    {% include 'includes/_footer.html' %}
+  </body>
+</html>

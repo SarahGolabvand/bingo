@@ -1,0 +1,82 @@
+{% extends 'base.html' %}{% load i18n %}{% block content %}
+
+<section class="shell py-12">
+  <article class="panel mx-auto max-w-2xl">
+    <div class="mb-8 flex justify-between">
+      <div>
+        <p class="text-3xl font-bold">dingo.</p>
+        <p class="mt-2 text-sm text-muted">
+          {% trans 'The Dingo coffee house' %}
+        </p>
+      </div>
+      <span class="eyebrow">{% trans 'Demo invoice' %}</span>
+    </div>
+    <h1 class="text-2xl font-semibold">
+      {% trans 'Thanks for stopping by.' %}
+    </h1>
+    <p class="my-4 text-sm text-muted">
+      {% trans 'Table' %} {{ table }} · {% now 'DATE_FORMAT' %}
+    </p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-start text-sm">
+        <caption class="sr-only">
+          {% trans 'Order details' %}
+        </caption>
+        <thead class="border-b border-line text-muted">
+          <tr>
+            <th scope="col" class="py-4 text-start">{% trans 'Item' %}</th>
+            <th scope="col">{% trans 'Quantity' %}</th>
+            <th scope="col" class="text-end">{% trans 'Unit price' %}</th>
+            <th scope="col" class="text-end">{% trans 'Amount' %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in lines %}
+          <tr class="border-b border-line">
+            <td class="py-4">
+              {{ row.name }}
+              <p class="text-xs text-muted">
+                {% if row.milk == 'oat' %}{% trans 'Oat milk' %}{% else %}{%
+                trans 'Whole milk' %}{% endif %}{% if row.shot %} · {% trans
+                'Extra espresso shot' %}{% endif %}{% if row.sweetness == 'none'
+                %} · {% trans 'Unsweetened' %}{% elif row.sweetness == 'extra'
+                %} · {% trans 'Extra sweet' %}{% endif %}
+              </p>
+            </td>
+            <td class="text-center">{{ row.quantity }}</td>
+            <td class="text-end">${{ row.unit|floatformat:2 }}</td>
+            <td class="text-end">${{ row.total|floatformat:2 }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="4" class="py-8">{% trans 'No items yet.' %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="my-6 space-y-3 text-sm">
+      <p class="flex justify-between">
+        <span>{% trans 'Subtotal' %}</span
+        ><span>${{ subtotal|floatformat:2 }}</span>
+      </p>
+      <p class="flex justify-between">
+        <span>{% trans 'Tax' %}</span
+        ><span>{% trans 'Not applied in demo' %}</span>
+      </p>
+      <p
+        class="flex justify-between border-t border-line pt-4 text-xl font-semibold"
+      >
+        <span>{% trans 'Total' %}</span
+        ><span>${{ subtotal|floatformat:2 }}</span>
+      </p>
+    </div>
+    <p class="text-xs text-muted">
+      {% trans 'Preview only — not a payment receipt.' %}
+    </p>
+    <button class="btn-primary no-print mt-8 w-full" onclick="window.print()">
+      {% trans 'Print invoice' %}
+    </button>
+  </article>
+</section>
+{% endblock %}

@@ -1,0 +1,1 @@
+module.exports = {content:['./templates/**/*.html','./static/js/*.js'],darkMode:'class',theme:{extend:{colors:{canvas:'var(--canvas)',surface:'var(--surface)',ink:'var(--ink)',muted:'var(--muted)',line:'var(--line)',aqua:'#4FD1C5',cherry:'#7E1925'},fontFamily:{sans:['Inter','Vazirmatn','system-ui','sans-serif']}}},plugins:[]};

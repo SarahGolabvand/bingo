@@ -1,0 +1,11 @@
+{% load i18n %}
+<header class="sticky top-0 z-30 border-b border-line bg-canvas/90 backdrop-blur-md" x-data="{ open:false }">
+<div class="shell flex h-20 items-center justify-between gap-4"><a href="{% url 'landing' %}" class="flex items-center gap-2 text-2xl font-bold tracking-tight"><svg class="h-7 w-7 text-teal-700 dark:text-aqua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h12v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Zm12 1h2a3 3 0 1 1 0 6h-2M7 3v2m4-2v2m4-2v2M2 22h18"/></svg>dingo<span class="text-aqua">.</span></a>
+<nav class="hidden items-center gap-7 text-sm text-muted lg:flex" aria-label="{% trans 'Main navigation' %}"><a href="{% url 'landing' %}#features" class="hover:text-ink">{% trans 'Features' %}</a><a href="{% url 'pricing' %}">{% trans 'Pricing' %}</a><a href="{% url 'menu' %}">{% trans 'Live Demo' %}</a><a href="{% url 'landing' %}#contact">{% trans 'Contact' %}</a>
+</nav>
+<div class="flex items-center gap-3">{% include 'includes/_language_switcher.html' %}<button class="h-10 w-10 rounded-full border border-line" @click="darkMode = !darkMode" :aria-pressed="darkMode" aria-label="{% trans 'Toggle dark mode' %}"><span x-text="darkMode ? '☼' : '☾'" aria-hidden="true"></span></button><a class="hidden text-sm sm:block" href="{% url 'login' %}">{% trans 'Sign In' %}</a><a class="btn-secondary hidden sm:inline-flex" href="{% url 'login' %}">{% trans 'Get Started' %}<span aria-hidden="true">↗</span></a><button class="lg:hidden" @click="open=!open" :aria-expanded="open" aria-controls="mobile-nav" aria-label="{% trans 'Open navigation' %}">☰</button>
+</div>
+</div>
+<nav id="mobile-nav" x-cloak x-show="open" class="shell grid gap-4 pb-5 lg:hidden" aria-label="{% trans 'Mobile navigation' %}"><a href="{% url 'landing' %}#features">{% trans 'Features' %}</a><a href="{% url 'pricing' %}">{% trans 'Pricing' %}</a><a href="{% url 'menu' %}">{% trans 'Live Demo' %}</a><a href="{% url 'landing' %}#contact">{% trans 'Contact' %}</a><a href="{% url 'login' %}">{% trans 'Sign In' %}</a>
+</nav>
+</header>

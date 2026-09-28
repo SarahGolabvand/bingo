@@ -179,3 +179,8 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+# Frontend build dependencies and local test artifacts
+node_modules/
+staticfiles/
+test-results/
+playwright-report/

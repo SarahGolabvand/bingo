@@ -1,0 +1,5 @@
+{% load i18n %}
+<div class="fixed end-5 top-24 z-50 space-y-3" aria-live="polite">{% for message in messages %}
+<div class="panel flex gap-4" x-data="{visible:true}" x-show="visible" role="status">{{ message }}<button @click="visible=false" aria-label="{% trans 'Dismiss notification' %}">×</button>
+</div>{% endfor %}
+</div>

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}{% load i18n %}{% block content %}
+
+<section class="shell py-16" x-data="{annual:false}">
+  <div class="text-center">
+    <p class="eyebrow">{% trans 'Room to grow' %}</p>
+    <h1 class="my-5 text-4xl font-semibold">
+      {% trans 'Simple plans. Beautiful possibilities.' %}
+    </h1>
+    <p class="text-muted">
+      {% trans 'Illustrative plans — billing is not enabled in this preview.' %}
+    </p>
+    <div class="my-8 inline-flex rounded-full border border-line p-1">
+      <button
+        class="btn"
+        :class="!annual && 'bg-surface'"
+        @click="annual=false"
+        :aria-pressed="!annual"
+      >
+        {% trans 'Monthly' %}</button
+      ><button
+        class="btn"
+        :class="annual && 'bg-surface'"
+        @click="annual=true"
+        :aria-pressed="annual"
+      >
+        {% trans 'Annually' %} · −20%
+      </button>
+    </div>
+  </div>
+  <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+    <article class="panel">
+      <p class="eyebrow">{% trans 'Essentials' %}</p>
+      <p class="my-6 text-5xl tabular-nums">
+        $<span x-text="annual ? '15.20' : '19'">19</span
+        ><span class="text-sm text-muted"> / {% trans 'month' %}</span>
+      </p>
+      <p class="text-muted">
+        {% trans 'A beautiful beginning for your neighborhood café.' %}
+      </p>
+      <ul class="my-8 space-y-4">
+        <li>✓ {% trans 'Digital menu and unlimited items' %}</li>
+        <li>✓ {% trans 'English and Persian menus' %}</li>
+        <li>✓ {% trans 'Table QR codes' %}</li>
+      </ul>
+      <a href="{% url 'login' %}" class="btn-secondary w-full"
+        >{% trans 'Get Started' %}</a
+      >
+    </article>
+    <article class="panel border-aqua/50">
+      <p class="eyebrow">{% trans 'Signature' %}</p>
+      <p class="my-6 text-5xl tabular-nums">
+        $<span x-text="annual ? '31.20' : '39'">39</span
+        ><span class="text-sm text-muted"> / {% trans 'month' %}</span>
+      </p>
+      <p class="text-muted">
+        {% trans 'A connected experience for your growing coffee business.' %}
+      </p>
+      <ul class="my-8 space-y-4">
+        <li>✓ {% trans 'Everything in Essentials' %}</li>
+        <li>✓ {% trans 'Ordering and custom modifiers' %}</li>
+        <li>✓ {% trans 'Live operations dashboard' %}</li>
+      </ul>
+      <a href="{% url 'login' %}" class="btn-primary w-full"
+        >{% trans 'Get Started' %}</a
+      >
+    </article>
+  </div>
+  <p x-show="annual" x-cloak class="mt-6 text-center text-sm text-muted">
+    {% trans 'Annual plans are billed yearly. Prices shown per month in USD.' %}
+  </p>
+</section>
+{% endblock %}

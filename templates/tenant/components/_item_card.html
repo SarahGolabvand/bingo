@@ -1,0 +1,29 @@
+{% load i18n %}
+<article
+  class="panel overflow-hidden p-0"
+  x-show="category==='all' || category==='{{ item.category }}'"
+>
+  <div
+    class="flex h-48 items-center justify-center bg-gradient-to-br from-aqua/10 to-transparent text-7xl"
+    aria-hidden="true"
+  >
+    {{ item.symbol }}
+  </div>
+  <div class="p-5">
+    <h2 class="text-lg font-semibold">{{ item.name }}</h2>
+    <p class="mb-5 mt-2 min-h-12 text-sm text-muted">{{ item.description }}</p>
+    <div class="flex items-center justify-between">
+      <span
+        class="font-semibold tabular-nums"
+        x-text="money({{ item.price }})"
+      ></span
+      ><button
+        class="btn-secondary px-4"
+        @click="choose({{ item.id }})"
+        aria-label="{% blocktrans with name=item.name %}Customize {{ name }}{% endblocktrans %}"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</article>

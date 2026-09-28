@@ -1,0 +1,50 @@
+const {test,expect}=require('@playwright/test');
+test('theme, RTL, cart modifiers, checkout, and invoice',async({page})=>{
+ const errors=[];page.on('pageerror',error=>errors.push(error.message));
+ await page.goto('/');
+ await expect(page.locator('html')).toHaveClass('dark');
+ await page.getByRole('button',{name:'Toggle dark mode'}).click();
+ await page.reload();await expect(page.locator('html')).not.toHaveClass('dark');
+ await page.goto('/demo/?table=7');
+ await page.getByRole('button',{name:'Customize Velvet latte'}).click();
+ await page.getByLabel('Oat milk',{exact:true}).check();
+ await page.getByLabel('Extra espresso shot',{exact:true}).check();
+ await expect(page.getByRole('button',{name:/Add to Cart/})).toContainText('$6.30');
+ await page.getByRole('button',{name:/Add to Cart/}).click();
+ await page.getByRole('button',{name:/View cart/}).click();
+ await expect(page.locator('#cart-summary')).toContainText('$6.30');
+ await page.getByRole('button',{name:'Increase quantity'}).click();
+ await expect(page.locator('#cart-summary')).toContainText('$12.60');
+ await page.getByRole('button',{name:'Close cart'}).click();
+ await page.getByRole('button',{name:'Change language'}).click();
+ await expect(page.locator('html')).toHaveAttribute('dir','rtl');
+ await expect(page).toHaveURL(/table=7/);
+ await page.getByRole('button',{name:/سبد سفارش/}).click();
+ await expect(page.locator('#cart-summary')).toContainText('12.60');
+ await page.locator('#checkout-button').click();
+ await expect(page).toHaveURL(/invoice/);
+ await expect(page.locator('main')).toContainText('12.60');
+ expect(errors).toEqual([]);
+});
+test('mobile layout, dialog keyboard, OTP and QR generator',async({page})=>{
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.setViewportSize({width:390,height:844});
+ for(const path of ['/','/pricing/','/login/','/demo/','/preview/vendor/','/preview/vendor/menu/','/preview/vendor/qr/']){
+  await page.goto(path);await expect(page.locator('main')).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
+ }
+ await page.getByRole('button',{name:'Generate QR package'}).click();
+ await expect(page.locator('img')).toHaveCount(6);
+ await expect(page.getByRole('link',{name:'Download QR code'}).first()).toHaveAttribute('href',/^data:image\/png/);
+ await page.goto('/login/');
+ await page.getByLabel('Code digit 1').fill('۱۲۳۴');
+ await expect(page.getByLabel('Code digit 4')).toHaveValue('4');
+ await page.getByRole('button',{name:'Preview 60-second cooldown'}).click();
+ await expect(page.getByRole('button',{name:/Preview 60-second cooldown/})).toBeDisabled();
+ await page.goto('/demo/');
+ const trigger=page.getByRole('button',{name:'Customize Velvet latte'});
+ await trigger.click();await expect(page.getByRole('dialog')).toBeVisible();
+ await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).toBeHidden();
+ await expect(trigger).toBeFocused();
+ expect(errors).toEqual([]);
+});

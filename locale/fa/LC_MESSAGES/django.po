@@ -1,0 +1,602 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Dingo 1.0\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: templates/public/pricing.html
+msgid "A beautiful beginning for your neighborhood café."
+msgstr "آغازی زیبا برای کافه‌ی محلی شما."
+
+#: templates/public/pricing.html
+msgid "A connected experience for your growing coffee business."
+msgstr "تجربه‌ای یکپارچه برای کسب‌وکار رو به رشد شما."
+
+#: templates/vendor/dashboard.html
+msgid "A good day starts here."
+msgstr "یک روز خوب از اینجا آغاز می‌شود."
+
+#: templates/includes/_footer.html
+msgid "A little more coffee. A lot less friction."
+msgstr "قهوه‌ی بیشتر، دردسر کمتر."
+
+#: templates/public/landing.html
+msgid "A menu with personality"
+msgstr "منویی با شخصیت"
+
+#: templates/public/landing.html
+msgid "A sculptural Dingo coffee cup surrounded by an aqua glow"
+msgstr "فنجان قهوه‌ی دینگو در میان هاله‌ای فیروزه‌ای"
+
+#: templates/vendor/qr_codes.html
+msgid "A seat at your table."
+msgstr "جایی سر میز شما."
+
+#: templates/vendor/dashboard.html
+msgid "Active orders"
+msgstr "سفارش‌های فعال"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Add to Cart"
+msgstr "افزودن به سبد"
+
+#: templates/tenant/menu.html
+msgid "All items"
+msgstr "همه"
+
+#: templates/tenant/orders/invoice.html
+msgid "Amount"
+msgstr "مبلغ"
+
+#: templates/public/pricing.html
+msgid "Annual plans are billed yearly. Prices shown per month in USD."
+msgstr "پرداخت طرح سالانه یک‌جا است. قیمت ماهانه به دلار آمریکا نمایش داده می‌شود."
+
+#: templates/public/pricing.html
+msgid "Annually"
+msgstr "سالانه"
+
+#: templates/public/auth/login_otp.html
+msgid "Authentication preview. Connect your SMS provider to enable sign-in."
+msgstr "پیش‌نمایش ورود. برای فعال‌سازی، سرویس پیامک را متصل کنید."
+
+#: templates/vendor/menu_manage.html
+msgid "Available"
+msgstr "موجود"
+
+#: templates/tenant/menu.html
+msgid "Bakery"
+msgstr "نان و شیرینی"
+
+#: templates/public/landing.html
+msgid "Beautiful photos, thoughtful modifiers, and a menu that feels like your brand."
+msgstr "تصاویر زیبا، انتخاب‌های دقیق و منویی با هویت برند شما."
+
+#: templates/public/landing.html
+msgid "Better moments."
+msgstr "لحظه‌های بهتر."
+
+#: templates/public/landing.html
+msgid "Built for specialty. Designed for you."
+msgstr "برای قهوه‌ی تخصصی، به سلیقه‌ی شما."
+
+#: apps/frontend/views.py
+msgid "Butter croissant"
+msgstr "کروسان کره‌ای"
+
+#: apps/frontend/views.py
+msgid "Ceremonial matcha, a softer kind of energy."
+msgstr "ماچای تشریفاتی؛ انرژی با لطافتی بیشتر."
+
+#: templates/includes/_language_switcher.html
+msgid "Change language"
+msgstr "تغییر زبان"
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Close cart"
+msgstr "بستن سبد"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Close dialog"
+msgstr "بستن پنجره"
+
+#: apps/frontend/views.py
+msgid "Cloud matcha"
+msgstr "ماچای ابری"
+
+#: templates/public/auth/login_otp.html
+#, python-format
+msgid "Code digit %(number)s"
+msgstr "رقم %(number)s کد"
+
+#: templates/tenant/menu.html
+msgid "Coffee"
+msgstr "قهوه"
+
+#: templates/public/landing.html
+msgid "Coffee roasters"
+msgstr "برشته‌کاری‌های قهوه"
+
+#: templates/includes/_header.html templates/includes/_header.html templates/includes/_footer.html
+msgid "Contact"
+msgstr "تماس با ما"
+
+#: templates/vendor/qr_codes.html
+msgid "Could not generate codes. Please try again."
+msgstr "کدها ساخته نشدند. دوباره تلاش کنید."
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Could not update your cart. Please try again."
+msgstr "سبد به‌روز نشد. دوباره تلاش کنید."
+
+#: templates/tenant/components/_item_card.html
+#, python-format
+msgid "Customize %(name)s"
+msgstr "شخصی‌سازی %(name)s"
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Decrease quantity"
+msgstr "کاهش تعداد"
+
+#: templates/tenant/orders/invoice.html
+msgid "Demo invoice"
+msgstr "صورتحساب نمایشی"
+
+#: templates/tenant/menu.html
+msgid "Demo menu"
+msgstr "منوی نمایشی"
+
+#: templates/tenant/cart/_cart_summary.html
+msgid "Demo order. No payment will be collected."
+msgstr "سفارش نمایشی است؛ مبلغی دریافت نمی‌شود."
+
+#: templates/vendor/_nav.html
+msgid "Demo workspace — sample data only. Changes are not saved."
+msgstr "محیط نمایشی با داده‌های نمونه؛ تغییرات ذخیره نمی‌شوند."
+
+#: templates/public/pricing.html
+msgid "Digital menu and unlimited items"
+msgstr "منوی دیجیتال با آیتم‌های نامحدود"
+
+#: templates/base.html
+msgid "Dingo — thoughtful digital menus for specialty coffee."
+msgstr "دینگو — منوی دیجیتال برای قهوه‌های خاص."
+
+#: templates/includes/_messages.html
+msgid "Dismiss notification"
+msgstr "بستن اعلان"
+
+#: apps/frontend/views.py
+msgid "Double espresso, silky steamed milk."
+msgstr "اسپرسوی دوبل و شیر بخاردیده‌ی لطیف."
+
+#: templates/vendor/qr_codes.html
+msgid "Download QR code"
+msgstr "دریافت کد QR"
+
+#: templates/public/pricing.html
+msgid "English and Persian menus"
+msgstr "منوی فارسی و انگلیسی"
+
+#: templates/public/auth/login_otp.html
+msgid "Enter the 4-digit code"
+msgstr "کد ۴ رقمی را وارد کنید"
+
+#: templates/public/pricing.html
+msgid "Essentials"
+msgstr "پایه"
+
+#: templates/public/pricing.html
+msgid "Everything in Essentials"
+msgstr "تمام امکانات طرح پایه"
+
+#: templates/public/landing.html
+msgid "Everything your café needs."
+msgstr "هر آنچه کافه‌ی شما نیاز دارد."
+
+#: templates/public/landing.html
+msgid "Explore live demo"
+msgstr "دیدن دموی زنده"
+
+#: templates/public/auth/login_otp.html
+msgid "Explore the dashboard preview"
+msgstr "دیدن پیش‌نمایش داشبورد"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/cart/_cart_drawer.html templates/tenant/orders/invoice.html
+msgid "Extra espresso shot"
+msgstr "شات اسپرسوی اضافه"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/cart/_cart_drawer.html
+msgid "Extra sweet"
+msgstr "شیرین‌تر"
+
+#: templates/includes/_header.html templates/includes/_header.html
+msgid "Features"
+msgstr "امکانات"
+
+#: templates/tenant/menu.html
+msgid "Find your next favorite."
+msgstr "طعم محبوب بعدی‌تان را پیدا کنید."
+
+#: templates/tenant/menu.html
+msgid "Freshly brewed. Thoughtfully made."
+msgstr "تازه‌دم، با دقت آماده‌شده."
+
+#: templates/public/landing.html
+msgid "From the first scan to the last sip."
+msgstr "از اولین اسکن تا آخرین جرعه."
+
+#: templates/vendor/qr_codes.html
+msgid "Generate QR package"
+msgstr "ساخت بسته‌ی QR"
+
+#: templates/vendor/qr_codes.html
+msgid "Generate printable table codes for the demo menu on this host."
+msgstr "کدهای قابل چاپ میزها را برای منوی نمایشی این میزبان بسازید."
+
+#: templates/includes/_header.html templates/public/pricing.html templates/public/pricing.html
+msgid "Get Started"
+msgstr "شروع کنید"
+
+#: apps/frontend/views.py
+msgid "Golden layers, baked fresh every morning."
+msgstr "لایه‌های طلایی، هر صبح تازه از فر."
+
+#: templates/public/landing.html
+msgid "Good taste. Great experience."
+msgstr "طعم خوب، تجربه‌ی عالی."
+
+#: templates/vendor/qr_codes.html
+msgid "Good things are brewing."
+msgstr "طعم‌های خوب در راه‌اند."
+
+#: templates/public/landing.html
+msgid "Great coffee."
+msgstr "قهوه‌ی عالی."
+
+#: templates/public/pricing.html
+msgid "Illustrative plans — billing is not enabled in this preview."
+msgstr "طرح‌های نمایشی؛ پرداخت در این پیش‌نمایش فعال نیست."
+
+#: templates/tenant/components/_item_modal.html
+msgid "Included"
+msgstr "بدون هزینه‌ی اضافه"
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Increase quantity"
+msgstr "افزایش تعداد"
+
+#: apps/frontend/views.py
+msgid "Invalid cart."
+msgstr "سبد سفارش نامعتبر است."
+
+#: templates/tenant/orders/invoice.html
+msgid "Item"
+msgstr "آیتم"
+
+#: templates/public/landing.html
+msgid "Keep your menu and daily service organized in one calm workspace."
+msgstr "منو و کارهای روزانه را در محیطی آرام و منظم مدیریت کنید."
+
+#: templates/public/landing.html
+msgid "Less busywork. More brewing."
+msgstr "کار کمتر، قهوه‌ی بیشتر."
+
+#: templates/includes/_header.html templates/includes/_header.html
+msgid "Live Demo"
+msgstr "دموی زنده"
+
+#: templates/public/pricing.html
+msgid "Live operations dashboard"
+msgstr "داشبورد زنده‌ی مدیریت"
+
+#: templates/public/landing.html
+msgid "Made for independent coffee culture"
+msgstr "برای فرهنگ کافه‌های مستقل"
+
+#: templates/base.html
+msgid "Made for your kind of coffee."
+msgstr "ساخته‌شده برای قهوه‌ی شما."
+
+#: templates/includes/_header.html
+msgid "Main navigation"
+msgstr "پیمایش اصلی"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Make it yours"
+msgstr "به سلیقه‌ی شما"
+
+#: templates/tenant/menu.html
+msgid "Matcha"
+msgstr "ماچا"
+
+#: templates/tenant/menu.html
+msgid "Menu categories"
+msgstr "دسته‌بندی منو"
+
+#: templates/vendor/_nav.html templates/vendor/menu_manage.html
+msgid "Menu management"
+msgstr "مدیریت منو"
+
+#: templates/vendor/_nav.html
+msgid "Merchant navigation"
+msgstr "پیمایش مدیریت"
+
+#: apps/frontend/views.py
+msgid "Midnight cold brew"
+msgstr "کلدبروی نیمه‌شب"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Milk selection"
+msgstr "انتخاب شیر"
+
+#: templates/includes/_header.html
+msgid "Mobile navigation"
+msgstr "پیمایش موبایل"
+
+#: templates/public/pricing.html
+msgid "Monthly"
+msgstr "ماهانه"
+
+#: templates/public/landing.html
+msgid "Neighborhood favorites"
+msgstr "محبوب‌های محله"
+
+#: templates/public/landing.html
+msgid "No downloads. No waiting. Just a quick scan and their next favorite order."
+msgstr "بدون نصب و انتظار؛ فقط یک اسکن تا سفارش دلخواه."
+
+#: templates/tenant/orders/invoice.html
+msgid "No items yet."
+msgstr "هنوز آیتمی وجود ندارد."
+
+#: templates/tenant/orders/invoice.html
+msgid "Not applied in demo"
+msgstr "در دمو اعمال نمی‌شود"
+
+#: templates/vendor/qr_codes.html
+msgid "Number of tables"
+msgstr "تعداد میزها"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/cart/_cart_drawer.html templates/tenant/orders/invoice.html
+msgid "Oat milk"
+msgstr "شیر جو دوسر"
+
+#: templates/includes/_header.html
+msgid "Open navigation"
+msgstr "باز کردن منو"
+
+#: templates/tenant/orders/invoice.html
+msgid "Order details"
+msgstr "جزئیات سفارش"
+
+#: templates/public/pricing.html
+msgid "Ordering and custom modifiers"
+msgstr "سفارش و شخصی‌سازی آیتم‌ها"
+
+#: templates/vendor/dashboard.html
+msgid "Orders today"
+msgstr "سفارش‌های امروز"
+
+#: templates/vendor/_nav.html
+msgid "Overview"
+msgstr "نمای کلی"
+
+#: templates/public/auth/login_otp.html
+msgid "Phone number"
+msgstr "شماره تلفن"
+
+#: templates/vendor/dashboard.html
+msgid "Preparing"
+msgstr "در حال آماده‌سازی"
+
+#: templates/vendor/dashboard.html
+msgid "Preview"
+msgstr "پیش‌نمایش"
+
+#: templates/public/auth/login_otp.html
+msgid "Preview 60-second cooldown"
+msgstr "نمایش مهلت ۶۰ ثانیه‌ای"
+
+#: templates/tenant/orders/invoice.html
+msgid "Preview only — not a payment receipt."
+msgstr "فقط پیش‌نمایش؛ رسید پرداخت نیست."
+
+#: templates/vendor/menu_manage.html
+msgid "Price (USD)"
+msgstr "قیمت (دلار آمریکا)"
+
+#: templates/includes/_header.html templates/includes/_header.html templates/includes/_footer.html
+msgid "Pricing"
+msgstr "تعرفه‌ها"
+
+#: templates/vendor/qr_codes.html
+msgid "Print QR package"
+msgstr "چاپ بسته‌ی QR"
+
+#: templates/tenant/orders/invoice.html
+msgid "Print invoice"
+msgstr "چاپ صورتحساب"
+
+#: templates/tenant/cart/_cart_summary.html
+msgid "Proceed to Checkout"
+msgstr "ادامه و ثبت سفارش"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/orders/invoice.html
+msgid "Quantity"
+msgstr "تعداد"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Regular"
+msgstr "معمولی"
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Retry"
+msgstr "تلاش دوباره"
+
+#: templates/vendor/dashboard.html
+msgid "Revenue today"
+msgstr "فروش امروز"
+
+#: templates/public/pricing.html
+msgid "Room to grow"
+msgstr "فضایی برای رشد"
+
+#: templates/vendor/qr_codes.html
+msgid "Scan to explore our menu"
+msgstr "برای دیدن منو اسکن کنید"
+
+#: templates/public/landing.html
+msgid "Scan. Sip. Stay a while."
+msgstr "اسکن کنید، بنوشید، بمانید."
+
+#: templates/includes/_header.html templates/includes/_header.html templates/public/auth/login_otp.html
+msgid "Sign In"
+msgstr "ورود"
+
+#: templates/public/pricing.html templates/vendor/dashboard.html
+msgid "Signature"
+msgstr "ویژه"
+
+#: templates/public/pricing.html
+msgid "Simple plans. Beautiful possibilities."
+msgstr "طرح‌های ساده، فرصت‌های زیبا."
+
+#: templates/public/landing.html
+msgid "Simple tools that work quietly, so your hospitality can shine."
+msgstr "ابزارهایی ساده تا مهمان‌نوازی شما بیشتر بدرخشد."
+
+#: templates/base.html
+msgid "Skip to content"
+msgstr "رفتن به محتوا"
+
+#: apps/frontend/views.py
+msgid "Slow-steeped for a smooth chocolate finish."
+msgstr "آرام‌دم با طعمی لطیف و شکلاتی."
+
+#: templates/vendor/menu_manage.html
+msgid "Sold out"
+msgstr "ناموجود"
+
+#: templates/public/landing.html
+msgid "Specialty cafés"
+msgstr "کافه‌های تخصصی"
+
+#: templates/public/landing.html
+msgid "Start your story"
+msgstr "داستانتان را شروع کنید"
+
+#: templates/vendor/dashboard.html
+msgid "Subscription"
+msgstr "اشتراک"
+
+#: templates/tenant/cart/_cart_summary.html templates/tenant/orders/invoice.html
+msgid "Subtotal"
+msgstr "جمع جزء"
+
+#: templates/tenant/components/_item_modal.html
+msgid "Sweetness"
+msgstr "میزان شیرینی"
+
+#: templates/tenant/menu.html templates/vendor/qr_codes.html templates/vendor/dashboard.html templates/tenant/orders/invoice.html
+msgid "Table"
+msgstr "میز"
+
+#: templates/public/pricing.html templates/vendor/_nav.html
+msgid "Table QR codes"
+msgstr "کدهای QR میزها"
+
+#: templates/vendor/qr_codes.html
+msgid "Table menu QR code"
+msgstr "کد QR منوی میز"
+
+#: templates/tenant/orders/invoice.html
+msgid "Tax"
+msgstr "مالیات"
+
+#: templates/tenant/orders/invoice.html
+msgid "Thanks for stopping by."
+msgstr "از حضورتان خوشحالیم."
+
+#: templates/tenant/menu.html templates/tenant/orders/invoice.html
+msgid "The Dingo coffee house"
+msgstr "کافه دینگو"
+
+#: templates/public/landing.html
+msgid "Thoughtful details. Effortless service."
+msgstr "جزئیات سنجیده، پذیرایی بی‌دردسر."
+
+#: templates/includes/_header.html
+msgid "Toggle dark mode"
+msgstr "تغییر حالت تیره"
+
+#: templates/tenant/orders/invoice.html
+msgid "Total"
+msgstr "مجموع"
+
+#: templates/tenant/orders/invoice.html
+msgid "Unit price"
+msgstr "قیمت واحد"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/cart/_cart_drawer.html
+msgid "Unsweetened"
+msgstr "بدون شکر"
+
+#: templates/vendor/qr_codes.html
+msgid "Use a publicly reachable host before printing for guests. Localhost codes only work on this device."
+msgstr "پیش از چاپ برای مهمان‌ها از میزبان عمومی استفاده کنید. کدهای لوکال فقط در همین دستگاه کار می‌کنند."
+
+#: templates/vendor/dashboard.html apps/frontend/views.py
+msgid "Velvet latte"
+msgstr "لاته مخملی"
+
+#: templates/tenant/menu.html
+msgid "View cart"
+msgstr "سبد سفارش"
+
+#: templates/public/auth/login_otp.html
+msgid "Welcome back"
+msgstr "خوش برگشتید"
+
+#: templates/tenant/components/_item_modal.html templates/tenant/cart/_cart_drawer.html templates/tenant/orders/invoice.html
+msgid "Whole milk"
+msgstr "شیر کامل"
+
+#: templates/public/auth/login_otp.html
+msgid "Your café starts here."
+msgstr "کافه‌ی شما از اینجا شروع می‌شود."
+
+#: templates/public/landing.html
+msgid "Your café, connected"
+msgstr "کافه‌ی شما، همیشه متصل"
+
+#: templates/vendor/dashboard.html
+msgid "Your daily brew"
+msgstr "حال‌وهوای امروز کافه"
+
+#: templates/public/landing.html
+msgid "Your floor, in focus"
+msgstr "نبض کافه در دست شما"
+
+#: templates/public/landing.html
+msgid "Your menu, beautifully digital. Give guests a seamless way to explore, order, and fall in love with your café."
+msgstr "منوی شما، به زیبایی دیجیتال. راهی ساده برای کشف طعم‌ها، سفارش و دل‌بستن به کافه‌ی شما."
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Your next favorite is waiting. Add something delicious."
+msgstr "طعم دلخواهتان منتظر شماست؛ چیزی خوشمزه اضافه کنید."
+
+#: templates/tenant/cart/_cart_drawer.html
+msgid "Your order"
+msgstr "سفارش شما"
+
+#: templates/public/landing.html
+msgid "Zero friction."
+msgstr "بدون دردسر."
+
+#: templates/public/pricing.html templates/public/pricing.html
+msgid "month"
+msgstr "ماه"

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}{% load i18n %}{% block content %} {{
+products|json_script:'menu-data' }}
+<div
+  x-data="menuCart"
+  @keydown.escape.window="active=null;drawer=false"
+  class="shell py-10"
+>
+  <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+    <div>
+      <p class="eyebrow">{% trans 'The Dingo coffee house' %}</p>
+      <h1 class="mb-3 mt-4 text-4xl font-semibold">
+        {% trans 'Find your next favorite.' %}
+      </h1>
+      <p class="text-muted">{% trans 'Freshly brewed. Thoughtfully made.' %}</p>
+    </div>
+    <span class="rounded-full border border-line px-4 py-2 text-xs"
+      >{% trans 'Demo menu' %} · {% trans 'Table' %} {{ table }}</span
+    >
+  </div>
+  <nav
+    class="sticky top-20 z-20 mb-8 flex gap-2 overflow-x-auto bg-canvas/95 py-4 backdrop-blur"
+    aria-label="{% trans 'Menu categories' %}"
+  >
+    <button
+      class="btn-secondary whitespace-nowrap"
+      :class="category==='all' && 'border-aqua'"
+      :aria-pressed="category==='all'"
+      @click="category='all'"
+    >
+      {% trans 'All items' %}</button
+    ><button
+      class="btn-secondary"
+      :aria-pressed="category==='coffee'"
+      :class="category==='coffee' && 'border-aqua'"
+      @click="category='coffee'"
+    >
+      {% trans 'Coffee' %}</button
+    ><button
+      class="btn-secondary"
+      :aria-pressed="category==='matcha'"
+      :class="category==='matcha' && 'border-aqua'"
+      @click="category='matcha'"
+    >
+      {% trans 'Matcha' %}</button
+    ><button
+      class="btn-secondary"
+      :aria-pressed="category==='bakery'"
+      :class="category==='bakery' && 'border-aqua'"
+      @click="category='bakery'"
+    >
+      {% trans 'Bakery' %}
+    </button>
+  </nav>
+  <div class="grid gap-5 pb-20 sm:grid-cols-2 lg:grid-cols-4">
+    {% for item in products %}{% include 'tenant/components/_item_card.html'
+    %}{% endfor %}
+  </div>
+  <button
+    class="btn-primary fixed bottom-6 start-1/2 z-20 min-w-64 -translate-x-1/2 shadow-xl rtl:translate-x-1/2"
+    @click="openCart()"
+  >
+    <span>{% trans 'View cart' %} · <span x-text="count"></span></span
+    ><span class="ms-4 tabular-nums" x-text="money(total)"></span></button
+  >{% include 'tenant/components/_item_modal.html' %}{% include
+  'tenant/cart/_cart_drawer.html' %}
+</div>
+{% endblock %}
