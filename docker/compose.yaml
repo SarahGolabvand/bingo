@@ -1,0 +1,81 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: bingo-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bingo_postgres}
+      POSTGRES_USER: ${POSTGRES_USER:-Admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-db_password}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-Admin} -d ${POSTGRES_DB:-bingo_postgres}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - bingo_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: bingo_redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - bingo_network
+
+  web:
+    build:
+      context: ..
+      dockerfile: ./docker/dockerfile
+    container_name: bingo_backend
+    restart: unless-stopped
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ..:/workspace:cached
+      - venv_data:/workspace/.venv 
+    ports:
+      - "8000:8000"
+    env_file:
+      - ../.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - bingo_network
+  pgweb:
+    image: sosedoff/pgweb 
+    restart: unless-stopped
+    environment:
+      PGWEB_DATABASE_URL: postgres://Admin:db_password@postgres:5432/bingo_postgres?sslmode=disable
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+        
+    networks:
+      - bingo_network
+
+volumes:
+  postgres_data:
+  redis_data:
+  venv_data:
+
+networks:
+  bingo_network:
+    driver: bridge

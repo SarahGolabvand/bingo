@@ -1,0 +1,27 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.pytest_cache/
+.ruff_cache/
+*.sqlite3
+media/
+staticfiles/
+tests/
+**/test_*.py
+tests.py
+
+# Node & Frontend Black Holes 🕳️
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.parcel-cache/
+.turbo/
+dist/

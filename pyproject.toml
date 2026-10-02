@@ -1,0 +1,25 @@
+[project]
+name = "bingo"
+version = "0.1.0"
+description = "Multi-tenant digital menu SaaS"
+readme = "README.md"
+authors = [
+    { name = "Sarah Golabvand", email = "s.golabvand1@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "django>=6.1.1",
+    "django-environ>=0.14.0",
+    "django-tenants>=3.14.0",
+    "pillow>=12.3.0",
+    "psycopg[binary]>=3.3.6",
+]
+
+
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = false

@@ -1,0 +1,53 @@
+# ==========================================
+# Stage 1: Build Dependencies via uv
+# ==========================================
+FROM python:3.13-slim-bookworm AS builder
+
+LABEL author="Sarah Golabvand" email="s.golabvand1@gmail.com"
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    UV_COMPILE_BYTECODE=1 \
+    UV_LINK_MODE=copy
+
+COPY --from=ghcr.io/astral-sh/uv:0.12.19  /uv /uvx /bin/
+
+WORKDIR /workspace
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+
+COPY pyproject.toml uv.lock ./ 
+
+RUN uv sync --frozen --no-install-project --no-dev 
+
+# ==========================================
+# Stage 2: Final Minimal & Secure Runtime
+# ==========================================
+FROM python:3.13-slim-bookworm AS runner
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PATH="/workspace/.venv/bin:$PATH"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libpq5 \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN groupadd -r appgroup && useradd -r -u 1000 -g appgroup appuser
+
+WORKDIR /workspace
+
+COPY --from=builder /workspace/.venv /workspace/.venv
+
+COPY --chown=appuser:appgroup . .
+
+USER appuser
+
+EXPOSE 8000
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
